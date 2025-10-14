@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div>
             <h3 className="text-3xl font-heading font-bold mb-4" data-testid="text-footer-logo">
-              ARGU
+              Bean Kitchen
             </h3>
             <p className="text-background/80 mb-6" data-testid="text-footer-about">
               Bean theme for interior design and kitchen websites. Perfect choice to show off your luxury furniture products.

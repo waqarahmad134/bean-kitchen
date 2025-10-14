@@ -8,7 +8,7 @@ import {
 } from '@/data/staticData';
 
 // Contact submissions will be stored in localStorage for persistence
-const CONTACT_STORAGE_KEY = 'argu_kitchen_contacts';
+const CONTACT_STORAGE_KEY = 'Bean_kitchen_contacts';
 
 export class DataService {
   // Portfolio methods

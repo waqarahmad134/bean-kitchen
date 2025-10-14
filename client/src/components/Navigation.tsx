@@ -23,9 +23,9 @@ export default function Navigation() {
               <Phone className="w-4 h-4" />
               Call Us: +1 5055 2360
             </a>
-            <a href="mailto:office@argu.com" className="flex items-center gap-2 hover-elevate px-2 py-1 rounded-md" data-testid="link-email">
+            <a href="mailto:office@Bean.com" className="flex items-center gap-2 hover-elevate px-2 py-1 rounded-md" data-testid="link-email">
               <Mail className="w-4 h-4" />
-              Email: office@argu.com
+              Email: office@Bean.com
             </a>
           </div>
           <div className="hidden md:flex items-center gap-4">
@@ -45,7 +45,7 @@ export default function Navigation() {
           <div className="flex items-center justify-between h-20">
             <div className="flex items-center">
               <h1 className="text-3xl font-heading font-bold text-foreground" data-testid="text-logo">
-                ARGU
+                Bean Kitchen
               </h1>
             </div>
 

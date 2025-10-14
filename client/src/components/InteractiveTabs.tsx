@@ -56,7 +56,7 @@ export default function InteractiveTabs() {
           <TabsContent value="content" className="mt-8" data-testid="content-tab">
             <div className="max-w-4xl mx-auto bg-muted rounded-md p-12">
               <div className="flex items-center gap-8 mb-8">
-                <h1 className="text-5xl font-heading font-bold">ARGU</h1>
+                <h1 className="text-5xl font-heading font-bold">Bean</h1>
               </div>
               <h4 className="text-2xl font-heading font-semibold mb-4">
                 Lectus scelerisque, risus purus pellentesque.
