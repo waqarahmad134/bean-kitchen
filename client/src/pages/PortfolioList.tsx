@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { Link } from 'wouter';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import type { Portfolio } from '@shared/schema';
+import type { Portfolio } from '@/types/schema';
 
 export default function PortfolioList() {
   const { data: portfolios, isLoading } = useQuery<Portfolio[]>({

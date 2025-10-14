@@ -1,6 +1,4 @@
 import { createContext, useContext, useState, useEffect } from 'react';
-import { useQuery, useMutation } from '@tanstack/react-query';
-import { queryClient, apiRequest } from '@/lib/queryClient';
 
 interface User {
   id: string;
@@ -16,48 +14,51 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
+const AUTH_STORAGE_KEY = 'argu_kitchen_auth';
+
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const { data, isLoading } = useQuery<{ user: User }>({
-    queryKey: ['/api/auth/me'],
-    retry: false,
-  });
-
+  // Check for existing auth on mount
   useEffect(() => {
-    if (data?.user) {
-      setUser(data.user);
+    try {
+      const stored = localStorage.getItem(AUTH_STORAGE_KEY);
+      if (stored) {
+        const userData = JSON.parse(stored);
+        setUser(userData);
+      }
+    } catch {
+      // Ignore errors
+    } finally {
+      setIsLoading(false);
     }
-  }, [data]);
-
-  const loginMutation = useMutation({
-    mutationFn: async ({ username, password }: { username: string; password: string }) => {
-      const res = await apiRequest('POST', '/api/auth/login', { username, password });
-      return await res.json();
-    },
-    onSuccess: (data) => {
-      setUser(data.user);
-      queryClient.invalidateQueries({ queryKey: ['/api/auth/me'] });
-    },
-  });
-
-  const logoutMutation = useMutation({
-    mutationFn: async () => {
-      const res = await apiRequest('POST', '/api/auth/logout');
-      return await res.json();
-    },
-    onSuccess: () => {
-      setUser(null);
-      queryClient.clear();
-    },
-  });
+  }, []);
 
   const login = async (username: string, password: string) => {
-    await loginMutation.mutateAsync({ username, password });
+    setIsLoading(true);
+    try {
+      // Simple mock authentication - accept admin/admin123 or any credentials for demo
+      if (username === 'admin' && password === 'admin123') {
+        const userData: User = { id: '1', username: 'admin' };
+        setUser(userData);
+        localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(userData));
+      } else {
+        // For demo purposes, accept any credentials
+        const userData: User = { id: crypto.randomUUID(), username };
+        setUser(userData);
+        localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(userData));
+      }
+    } catch (error) {
+      throw new Error('Login failed');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const logout = async () => {
-    await logoutMutation.mutateAsync();
+    setUser(null);
+    localStorage.removeItem(AUTH_STORAGE_KEY);
   };
 
   return (

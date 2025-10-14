@@ -3,7 +3,7 @@ import { Link } from 'wouter';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Calendar, MessageCircle, ArrowRight } from 'lucide-react';
-import type { BlogPost } from '@shared/schema';
+import type { BlogPost } from '@/types/schema';
 
 export default function BlogList() {
   const { data: posts, isLoading } = useQuery<BlogPost[]>({

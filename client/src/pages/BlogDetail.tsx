@@ -3,7 +3,7 @@ import { useRoute } from 'wouter';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Calendar } from 'lucide-react';
-import type { BlogPost } from '@shared/schema';
+import type { BlogPost } from '@/types/schema';
 
 export default function BlogDetail() {
   const [, params] = useRoute('/blog/:slug');

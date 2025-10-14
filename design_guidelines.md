@@ -1,8 +1,8 @@
-# Argu Kitchen Design Guidelines - Luxury Kitchen Renovation Clone
+# Bean Kitchen Design Guidelines - Luxury Kitchen Renovation Clone
 
 ## Design Approach: Premium Interior Design Reference
 
-This is a faithful clone of the Argu Kitchen WordPress theme - a luxury kitchen design and renovation showcase. The design draws inspiration from high-end interior design websites like those in the hospitality and home renovation space, emphasizing visual storytelling through rich photography and elegant typography.
+This is a faithful clone of the Bean Kitchen WordPress theme - a luxury kitchen design and renovation showcase. The design draws inspiration from high-end interior design websites like those in the hospitality and home renovation space, emphasizing visual storytelling through rich photography and elegant typography.
 
 ## Core Design Elements
 

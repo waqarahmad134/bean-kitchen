@@ -12,7 +12,7 @@ export default function Footer() {
               ARGU
             </h3>
             <p className="text-background/80 mb-6" data-testid="text-footer-about">
-              Argu WordPress theme for interior design and kitchen websites. Perfect choice to show off your luxury furniture products.
+              Bean theme for interior design and kitchen websites. Perfect choice to show off your luxury furniture products.
             </p>
             <div className="flex gap-3">
               <a href="#" className="hover-elevate p-2 rounded-md" data-testid="link-facebook">
@@ -77,7 +77,7 @@ export default function Footer() {
 
         <div className="border-t border-background/20 pt-8 text-center text-background/60">
           <p data-testid="text-copyright">
-            © 2025 Argu Kitchen Theme. Made with love - Premium Theme by <a href="#" className="text-primary hover:underline">Useful Pixels</a>
+            © 2025 Bean Kitchen Theme. Made with love - Premium Theme by <a href="#" className="text-primary hover:underline">Useful Pixels</a>
           </p>
         </div>
       </div>

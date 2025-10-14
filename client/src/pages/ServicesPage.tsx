@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 import ProcessTimeline from '@/components/ProcessTimeline';
 import CTASection from '@/components/CTASection';
 import { Button } from '@/components/ui/button';
-import type { Service } from '@shared/schema';
+import type { Service } from '@/types/schema';
 
 export default function ServicesPage() {
   const { data: services, isLoading } = useQuery<Service[]>({

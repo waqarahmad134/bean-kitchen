@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 import AboutSection from '@/components/AboutSection';
 import TestimonialsCarousel from '@/components/TestimonialsCarousel';
 import StatsCounter from '@/components/StatsCounter';
-import type { TeamMember } from '@shared/schema';
+import type { TeamMember } from '@/types/schema';
 
 export default function AboutPage() {
   const { data: team, isLoading } = useQuery<TeamMember[]>({
@@ -18,7 +18,7 @@ export default function AboutPage() {
       <div className="py-24 bg-muted">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h1 className="text-5xl font-heading font-bold mb-4" data-testid="text-about-title">
-            About Argu Kitchen
+            About Bean Kitchen
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Creating award-winning luxury kitchens for over 25 years

@@ -21,7 +21,7 @@ export function AdminSidebar() {
   return (
     <Sidebar>
       <SidebarHeader className="p-6">
-        <h2 className="text-2xl font-heading font-bold" data-testid="text-admin-logo">ARGU Admin</h2>
+        <h2 className="text-2xl font-heading font-bold" data-testid="text-admin-logo">Bean Admin</h2>
         <p className="text-sm text-muted-foreground" data-testid="text-admin-user">
           {user?.username}
         </p>

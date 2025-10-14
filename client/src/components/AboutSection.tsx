@@ -12,7 +12,7 @@ export default function AboutSection() {
               About Us
             </p>
             <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-6" data-testid="text-about-title">
-              Argu design Studio.
+              Bean design Studio.
             </h2>
             <h3 className="text-xl md:text-2xl text-foreground/80 mb-6" data-testid="text-about-subtitle">
               We provide a comprehensive cabinetry design & installation service for your perfect space.

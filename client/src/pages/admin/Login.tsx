@@ -41,7 +41,7 @@ export default function AdminLogin() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-muted" data-testid="page-admin-login">
       <div className="w-full max-w-md p-8 bg-background rounded-md shadow-lg">
-        <h1 className="text-3xl font-heading font-bold mb-2" data-testid="text-login-title">ARGU Admin</h1>
+        <h1 className="text-3xl font-heading font-bold mb-2" data-testid="text-login-title">Bean Admin</h1>
         <p className="text-muted-foreground mb-8" data-testid="text-login-subtitle">Sign in to manage your website</p>
         
         <form onSubmit={handleSubmit} className="space-y-6">

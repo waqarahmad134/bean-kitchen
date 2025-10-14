@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import AdminLayout from '@/components/AdminLayout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { FolderKanban, FileText, Briefcase, MessageSquare, Users, Mail } from 'lucide-react';
-import type { Portfolio, BlogPost, Service, Testimonial, TeamMember, ContactSubmission } from '@shared/schema';
+import type { Portfolio, BlogPost, Service, Testimonial, TeamMember, ContactSubmission } from '@/types/schema';
 
 export default function AdminDashboard() {
   const { data: portfolios } = useQuery<Portfolio[]>({ queryKey: ['/api/portfolios'] });

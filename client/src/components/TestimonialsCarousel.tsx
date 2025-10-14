@@ -14,7 +14,7 @@ const testimonials = [
     name: 'Monica Nzeogwu',
     role: 'Project Manager',
     company: 'Industry: Jewellery',
-    quote: 'I would like to take this opportunity to say that the quality of service offered by Argu has been highly impressive.',
+    quote: 'I would like to take this opportunity to say that the quality of service offered by Bean has been highly impressive.',
     initials: 'MN',
   },
   {

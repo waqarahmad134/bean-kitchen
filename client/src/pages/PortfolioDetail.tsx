@@ -4,7 +4,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Calendar, MapPin, Users, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import type { Portfolio } from '@shared/schema';
+import type { Portfolio } from '@/types/schema';
 
 export default function PortfolioDetail() {
   const [, params] = useRoute('/portfolio/:slug');

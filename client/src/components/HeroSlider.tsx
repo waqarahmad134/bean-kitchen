@@ -10,7 +10,7 @@ const slides = [
     image: heroImage1,
     badge: 'Award 2019',
     title: ['Award winning kitchen', 'renovations company.'],
-    subtitle: 'Argu WordPress theme for interior design and kitchen websites. Perfect choice to show off your luxury furniture products.',
+    subtitle: 'Bean theme for interior design and kitchen websites. Perfect choice to show off your luxury furniture products.',
   },
   {
     image: heroImage2,
