@@ -1,0 +1,61 @@
+name: 🚀 Deploy React (Vite) to Shared Hosting (Failsafe)
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    name: 🎉 Build and Deploy React (Vite)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🧰 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 📦 Install dependencies
+        run: npm ci
+
+      - name: 🔨 Build project
+        run: npm run build
+
+      - name: 🧾 Log build folder size
+        run: du -sh dist
+
+      # --- Primary deploy using SamKirkland Action ---
+      - name: 📂 Deploy build via FTP (Primary)
+        id: ftp_deploy
+        continue-on-error: true
+        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+        with:
+          server: ftp.beankitchen.com
+          username: u442793684.beankitchen
+          password: AAaa11@@AA#2025
+          server-dir: /
+          local-dir: dist/
+          dangerous-clean-slate: false
+
+      # --- Fallback if the above step fails ---
+      - name: ⚙️ Fallback to manual lftp deploy
+        if: steps.ftp_deploy.outcome == 'failure'
+        run: |
+          echo "⚠️ SamKirkland FTP deploy failed, falling back to manual lftp."
+          sudo apt-get update && sudo apt-get install -y lftp
+          cd dist
+          echo "Starting manual FTP upload at $(date)"
+          lftp -c "set ssl:verify-certificate no; open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST; mirror -R ./ /"
+          echo "Manual FTP upload finished at $(date)"
+        env:
+          FTP_USERNAME: u442793684.beankitchen	
+          FTP_PASSWORD: AAaa11@@AA#2025
+          FTP_HOST: ftp.beankitchen.com	
+
+      - name: 🧹 Clean up
+        run: echo "✅ Deployment process complete"
