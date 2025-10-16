@@ -19,13 +19,13 @@ export default function Navigation() {
       <div className="bg-foreground text-background py-2">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center text-sm">
           <div className="flex items-center gap-6">
-            <a href="tel:+15055552360" className="flex items-center gap-2 hover-elevate px-2 py-1 rounded-md" data-testid="link-phone">
+            <a href="tel:+13053008643" className="flex items-center gap-2 hover-elevate px-2 py-1 rounded-md" data-testid="link-phone">
               <Phone className="w-4 h-4" />
-              Call Us: +1 5055 2360
+              Call Us: +1 305-300-8643
             </a>
-            <a href="mailto:office@Bean.com" className="flex items-center gap-2 hover-elevate px-2 py-1 rounded-md" data-testid="link-email">
+            <a href="mailto:bean@constructioncorporate.com" className="flex items-center gap-2 hover-elevate px-2 py-1 rounded-md" data-testid="link-email">
               <Mail className="w-4 h-4" />
-              Email: office@Bean.com
+              Email: bean@constructioncorporate.com
             </a>
           </div>
           <div className="hidden md:flex items-center gap-4">
@@ -74,9 +74,7 @@ export default function Navigation() {
               <Button variant="ghost" size="icon" data-testid="button-search">
                 <Search className="w-5 h-5" />
               </Button>
-              <Button variant="ghost" size="icon" data-testid="button-cart">
-                <ShoppingCart className="w-5 h-5" />
-              </Button>
+              
               <Button variant="default" className="hidden lg:inline-flex" data-testid="button-cta">
                 Visit Showroom
               </Button>
