@@ -20,7 +20,7 @@ const slides = [
   },
   {
     image: heroImage3,
-    badge: 'Best Brand',
+    badge: '',
     title: ['Luxury kitchen design', 'for modern living.'],
     subtitle: 'We provide a comprehensive cabinetry design & installation service for your perfect space.',
   },
@@ -80,47 +80,13 @@ export default function HeroSlider() {
                 <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl" data-testid={`text-subtitle-${index}`}>
                   {slide.subtitle}
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button size="lg" variant="default" className="text-base" data-testid="button-showroom">
-                    Visit Showroom
-                  </Button>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="text-base bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20"
-                    data-testid="button-launch"
-                  >
-                    Launch
-                  </Button>
-                </div>
-                {slide.badge && (
-                  <div className="mt-12 inline-block" data-testid={`badge-${index}`}>
-                    <div className="border-2 border-primary/50 rounded-full p-6 inline-flex flex-col items-center">
-                      <div className="text-xs text-primary tracking-widest uppercase mb-1">Best Brand</div>
-                      <div className="text-white font-bold">{slide.badge}</div>
-                    </div>
-                  </div>
-                )}
+                
               </div>
             </div>
           </div>
         </div>
       ))}
 
-      <button
-        onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-white/10 backdrop-blur-sm p-3 rounded-md hover-elevate border border-white/20"
-        data-testid="button-prev"
-      >
-        <ChevronLeft className="w-6 h-6 text-white" />
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-white/10 backdrop-blur-sm p-3 rounded-md hover-elevate border border-white/20"
-        data-testid="button-next"
-      >
-        <ChevronRight className="w-6 h-6 text-white" />
-      </button>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex gap-3" data-testid="dots-container">
         {slides.map((_, index) => (

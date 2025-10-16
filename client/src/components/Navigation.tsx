@@ -17,8 +17,8 @@ export default function Navigation() {
   return (
     <>
       <div className="bg-foreground text-background py-2">
-        <div className="max-w-7xl mx-auto px-4 flex justify-between items-center text-sm">
-          <div className="flex items-center gap-6">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center  text-sm">
+          <div className="flex md:flex-row flex-col items-center">
             <a href="tel:+13053008643" className="flex items-center gap-2 hover-elevate px-2 py-1 rounded-md" data-testid="link-phone">
               <Phone className="w-4 h-4" />
               Call Us: +1 305-300-8643
@@ -28,7 +28,7 @@ export default function Navigation() {
               Email: bean@constructioncorporate.com
             </a>
           </div>
-          <div className="hidden md:flex items-center gap-4">
+          <div className="flex items-center gap-4">
             <Button variant="ghost" size="sm" className="text-background hover:text-background" data-testid="button-download">
               Download Brochure
             </Button>
@@ -75,9 +75,7 @@ export default function Navigation() {
                 <Search className="w-5 h-5" />
               </Button>
               
-              <Button variant="default" className="hidden lg:inline-flex" data-testid="button-cta">
-                Visit Showroom
-              </Button>
+              
               <Button
                 variant="ghost"
                 size="icon"
@@ -112,9 +110,7 @@ export default function Navigation() {
               <a href="/contact" className="block text-foreground hover:text-primary py-2" data-testid="link-mobile-contact">
                 Contact
               </a>
-              <Button variant="default" className="w-full mt-4" data-testid="button-mobile-cta">
-                Visit Showroom
-              </Button>
+              
             </div>
           </div>
         )}
