@@ -15,12 +15,12 @@ export default function ServicesPage() {
     <div className="min-h-screen">
       <Navigation />
       
-      <div className="py-24 bg-muted">
+      <div className="py-10 bg-muted">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h1 className="text-5xl font-heading font-bold mb-4" data-testid="text-services-title">
             Our Services
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-12">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Transform your kitchen with our comprehensive design and renovation services
           </p>
         </div>
@@ -47,8 +47,6 @@ export default function ServicesPage() {
         </div>
       </div>
 
-      <ProcessTimeline />
-      <CTASection />
       <Footer />
     </div>
   );

@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { Play, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import videoThumb from '@assets/generated_images/Walnut_luxury_kitchen_interior_583d3f1e.png';
+import videoThumb from '@assets/portfolio/video_thumbnail.jpg';
+import videoLink from '@assets/portfolio/video.mp4';
+
 
 export default function VideoSection() {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
@@ -20,12 +22,6 @@ export default function VideoSection() {
             <h3 className="text-2xl md:text-3xl text-foreground/80 mb-6" data-testid="text-video-subtitle">
               Take a look inside.
             </h3>
-            <p className="text-muted-foreground mb-8" data-testid="text-video-description">
-              Lectus scelerisque, risus purus pellentesque, phasellus proin. Nam cras sit, phasellus facilisis commodo phasellus & dolor.
-            </p>
-            <Button variant="default" size="lg" data-testid="button-more-videos">
-              More Videos
-            </Button>
           </div>
           <div className="relative group">
             <img
@@ -51,25 +47,42 @@ export default function VideoSection() {
       </div>
 
       {isVideoOpen && (
-        <div
-          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
-          onClick={() => {
-            setIsVideoOpen(false);
-            console.log('Video modal closed');
-          }}
-          data-testid="modal-video"
-        >
-          <button
-            className="absolute top-4 right-4 text-white hover-elevate p-2 rounded-md"
-            data-testid="button-close-video"
-          >
-            <X className="w-8 h-8" />
-          </button>
-          <div className="w-full max-w-5xl aspect-video bg-black rounded-md flex items-center justify-center">
-            <p className="text-white text-xl">Video Player Placeholder</p>
-          </div>
-        </div>
+  <div
+    className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+    onClick={() => {
+      setIsVideoOpen(false);
+      console.log('Video modal closed');
+    }}
+    data-testid="modal-video"
+  >
+    {/* Inner container that stops click propagation */}
+    <div
+      className="relative w-full max-w-5xl aspect-video bg-black rounded-md flex items-center justify-center overflow-hidden"
+      onClick={(e) => e.stopPropagation()}
+    >
+      {/* Close button */}
+      <button
+        className="absolute top-4 right-4 text-white hover:bg-white/10 p-2 rounded-md transition"
+        data-testid="button-close-video"
+        onClick={() => setIsVideoOpen(false)}
+      >
+        <X className="w-8 h-8" />
+      </button>
+
+      {/* Video player */}
+      <video
+        src={videoLink}
+        controls
+        autoPlay
+        className="w-full h-full rounded-md"
+      >
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
       )}
+
+
     </section>
   );
 }

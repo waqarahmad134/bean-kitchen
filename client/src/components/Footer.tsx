@@ -77,7 +77,7 @@ export default function Footer() {
 
         <div className="border-t border-background/20 pt-8 text-center text-background/60">
           <p data-testid="text-copyright">
-            © 2025 Bean Kitchen Theme. Made with love - Premium Theme by <a href="#" className="text-primary hover:underline">Useful Pixels</a>
+            © 2025 Bean Kitchen Theme. Made with love
           </p>
         </div>
       </div>

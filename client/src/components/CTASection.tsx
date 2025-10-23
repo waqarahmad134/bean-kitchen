@@ -17,14 +17,21 @@ export default function CTASection() {
               </p>
             </div>
           </div>
-          <Button
-            variant="secondary"
-            size="lg"
-            className="whitespace-nowrap"
+          <a
+            href="/portfolio.zip"
+            download
+            className="inline-block"
             data-testid="button-register"
           >
-            Register
-          </Button>
+            <Button
+              variant="secondary"
+              size="lg"
+              className="whitespace-nowrap"
+            >
+              Download
+            </Button>
+          </a>
+
         </div>
       </div>
     </section>

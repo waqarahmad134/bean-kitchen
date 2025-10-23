@@ -45,7 +45,9 @@ export default function Navigation() {
           <div className="flex items-center justify-between h-20">
             <div className="flex items-center">
               <h1 className="text-3xl font-heading font-bold text-foreground" data-testid="text-logo">
+              <a href="/" className="text-foreground hover:text-primary transition-colors font-medium" data-testid="link-home">
                 Bean Kitchen
+              </a>
               </h1>
             </div>
 
@@ -56,9 +58,9 @@ export default function Navigation() {
               <a href="/portfolio" className="text-foreground hover:text-primary transition-colors font-medium" data-testid="link-portfolio">
                 Portfolio
               </a>
-              <a href="/services" className="text-foreground hover:text-primary transition-colors font-medium" data-testid="link-services">
+              {/* <a href="/services" className="text-foreground hover:text-primary transition-colors font-medium" data-testid="link-services">
                 Services
-              </a>
+              </a> */}
               <a href="/about" className="text-foreground hover:text-primary transition-colors font-medium" data-testid="link-about">
                 About
               </a>

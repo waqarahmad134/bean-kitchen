@@ -20,7 +20,7 @@ export default function HomePage() {
       <HeroSlider />
       <AboutSection />
       <ServicesSection />
-      <ProcessTimeline />
+      {/* <ProcessTimeline /> */}
       <VideoSection />
       <InteractiveTabs />
       <CTASection />
