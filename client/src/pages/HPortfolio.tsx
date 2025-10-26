@@ -67,13 +67,8 @@ export default function HPortfolio() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
                   <div className="text-white">
-                    {portfolio.style && (
-                      <p className="text-xs tracking-widest uppercase mb-2 text-primary">
-                        {portfolio.style}
-                      </p>
-                    )}
                     <h3 className="text-2xl font-heading font-semibold">
-                      {portfolio.title}
+                      Executation Project {portfolio?.id}
                     </h3>
                     {portfolio.headline && (
                       <p className="text-sm mt-2 text-white/80">

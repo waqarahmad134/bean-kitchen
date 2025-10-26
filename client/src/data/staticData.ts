@@ -31,7 +31,7 @@ import beanKitchenPreview from '@/assets/portfolio/bean-kitchen-preview.png';
 export const portfolios: Portfolio[] = [
   {
     id: "1",
-    title: "Modern Minimalist Kitchen",
+    title: "Execuation Project",
     slug: "modern-minimalist-kitchen",
     description:
       "A stunning modern kitchen featuring clean lines, handleless cabinets, and integrated appliances. This project showcases our expertise in creating functional yet beautiful spaces that maximize efficiency without compromising on style.",
