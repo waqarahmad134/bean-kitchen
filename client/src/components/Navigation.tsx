@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown, Phone, Mail, ShoppingCart, Search } from 'lucide-react';
+import { Menu, X, ChevronDown, Phone, Mail, ShoppingCart, Search, Instagram, LocateIcon, MapPinHouse } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export default function Navigation() {
@@ -13,6 +13,24 @@ export default function Navigation() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleAddressClick = (e) => {
+    e.preventDefault();
+
+    const address = encodeURIComponent("8732 NW 119 St Miami, Florida");
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    if (/android/i.test(userAgent)) {
+      // Open in Google Maps (Android)
+      window.open(`https://maps.google.com/?q=${address}`, "_blank");
+    } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+      // Open in Apple Maps (iPhone)
+      window.open(`https://maps.apple.com/?q=${address}`, "_blank");
+    } else {
+      // Default fallback: open Google Maps in browser
+      window.open(`https://maps.google.com/?q=${address}`, "_blank");
+    }
+  };
 
   return (
     <>
@@ -29,9 +47,12 @@ export default function Navigation() {
             </a>
           </div>
           <div className="flex items-center gap-4">
-            <Button variant="ghost" size="sm" className="text-background hover:text-background" data-testid="button-download">
-              Download Brochure
-            </Button>
+            <a href='http://www.instagram.com/bean_construction' target='_blank' rel="noopener noreferrer" className="text-background hover:text-background">
+              <Instagram/>
+            </a>
+            <a onClick={handleAddressClick} className="cursor-pointer flex items-center gap-2 hover-elevate px-2 py-1 rounded-md" data-testid="link-phone">
+              <MapPinHouse/>
+          </a>
           </div>
         </div>
       </div>

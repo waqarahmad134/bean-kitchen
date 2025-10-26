@@ -94,7 +94,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Address</h3>
-                    <p className="text-muted-foreground">123 Design Street, Kitchen City, KC 12345</p>
+                    <p className="text-muted-foreground">123 Design8732 nw 119 st Miami, Florida</p>
                   </div>
                 </div>
               </div>
