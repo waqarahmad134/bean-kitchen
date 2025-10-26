@@ -7,6 +7,9 @@ import portfolio5 from '@assets/portfolio/portfolio5.jpg';
 import portfolio6 from '@assets/portfolio/portfolio6.jpg';
 import portfolio7 from '@assets/portfolio/portfolio7.jpg';
 import portfolio8 from '@assets/portfolio/portfolio8.jpg';
+import logo from '@/assets/portfolio/logo.png';
+import favicon from '@/assets/portfolio/favicon.png';
+import beanKitchenPreview from '@/assets/portfolio/bean-kitchen-preview.png';
 
 // Static portfolio data
 export const portfolios: Portfolio[] = [
@@ -17,7 +20,7 @@ export const portfolios: Portfolio[] = [
     description:
       "A stunning modern kitchen featuring clean lines, handleless cabinets, and integrated appliances. This project showcases our expertise in creating functional yet beautiful spaces that maximize efficiency without compromising on style.",
     heroImage: portfolio1,
-    gallery: [portfolio1, portfolio2],
+    gallery: [favicon, beanKitchenPreview],
     location: "Manhattan, NY",
     style: "Modern",
     completionDate: "March 2024",
@@ -33,7 +36,7 @@ export const portfolios: Portfolio[] = [
     description:
       "This elegant traditional kitchen combines timeless design with modern conveniences. Rich wood cabinetry, marble countertops, and professional-grade appliances create a warm and inviting space perfect for family gatherings.",
     heroImage: portfolio2,
-    gallery: [portfolio3, portfolio4],
+    gallery: [logo, portfolio4],
     location: "Westchester, NY",
     style: "Traditional",
     completionDate: "January 2024",
