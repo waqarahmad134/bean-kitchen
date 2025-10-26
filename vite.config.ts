@@ -3,17 +3,9 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
-// ✅ define `global` shim for browser (avoids "global is not defined")
-const defineGlobalsForBrowser = {
-  global: "window",
-};
-
 export default defineConfig({
   base: "/",
-  plugins: [
-    react(),
-    runtimeErrorOverlay(),
-  ],
+  plugins: [react(), runtimeErrorOverlay()],
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
@@ -25,7 +17,11 @@ export default defineConfig({
     outDir: path.resolve(import.meta.dirname, "dist"),
     emptyOutDir: true,
   },
-  define: defineGlobalsForBrowser, // ✅ add this line
+  define: {
+    // ✅ Only define global safely
+    global:
+      "typeof globalThis !== 'undefined' ? globalThis : (typeof window !== 'undefined' ? window : {})",
+  },
   server: {
     fs: {
       strict: true,
