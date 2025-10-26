@@ -12,6 +12,8 @@ import PortfolioCarousel from '@/components/PortfolioCarousel';
 import BlogSection from '@/components/BlogSection';
 import FinalCTA from '@/components/FinalCTA';
 import Footer from '@/components/Footer';
+import PortfolioList from './PortfolioList';
+import HPortfolio from './HPortfolio';
 
 export default function HomePage() {
   return (
@@ -22,12 +24,13 @@ export default function HomePage() {
       <ServicesSection />
       {/* <ProcessTimeline /> */}
       <VideoSection />
-      <InteractiveTabs />
+      {/* <InteractiveTabs /> */}
       <CTASection />
       <TestimonialsCarousel />
       <StatsCounter />
-      <PortfolioCarousel />
-      <BlogSection />
+      {/* <PortfolioCarousel /> */}
+      {/* <BlogSection /> */}
+      <HPortfolio/>
       <FinalCTA />
       <Footer />
     </div>

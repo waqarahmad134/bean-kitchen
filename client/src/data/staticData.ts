@@ -1,12 +1,28 @@
 import type { Portfolio, BlogPost, Service, Testimonial, TeamMember } from '@/types/schema';
-import portfolio1 from '@assets/portfolio/portfolio1.jpg';
-import portfolio2 from '@assets/portfolio/portfolio2.jpg';
-import portfolio3 from '@assets/portfolio/portfolio3.jpg';
-import portfolio4 from '@assets/portfolio/portfolio4.jpg';
-import portfolio5 from '@assets/portfolio/portfolio5.jpg';
-import portfolio6 from '@assets/portfolio/portfolio6.jpg';
-import portfolio7 from '@assets/portfolio/portfolio7.jpg';
-import portfolio8 from '@assets/portfolio/portfolio8.jpg';
+import portfolio1_1 from '@assets/portfolio/portfolio1_1.jpg';
+import portfolio1_2 from '@assets/portfolio/portfolio1_2.jpg';
+import portfolio1_3 from '@assets/portfolio/portfolio1_3.jpg';
+import portfolio1_4 from '@assets/portfolio/portfolio1_4.jpg';
+
+import portfolio2_1 from '@assets/portfolio/portfolio2_1.jpg';
+import portfolio2_2 from '@assets/portfolio/portfolio2_2.jpg';
+
+import portfolio3_1 from '@assets/portfolio/portfolio3_1.jpg';
+import portfolio3_2 from '@assets/portfolio/portfolio3_2.jpg';
+import portfolio3_3 from '@assets/portfolio/portfolio3_3.jpg';
+
+import portfolio4_1 from '@assets/portfolio/portfolio4_1.jpg';
+import portfolio4_2 from '@assets/portfolio/portfolio4_2.jpg';
+
+import portfolio5_1 from '@assets/portfolio/portfolio5_1.jpg';
+import portfolio5_2 from '@assets/portfolio/portfolio5_2.jpg';
+
+import portfolio6_1 from '@assets/portfolio/portfolio6_1.jpg';
+import portfolio7_1 from '@assets/portfolio/portfolio7_1.jpg';
+import portfolio8_1 from '@assets/portfolio/portfolio8_1.jpg';
+import portfolio9_1 from '@assets/portfolio/portfolio9_1.jpg';
+import portfolio10_1 from '@assets/portfolio/portfolio10_1.jpg';
+
 import logo from '@/assets/portfolio/logo.png';
 import favicon from '@/assets/portfolio/favicon.png';
 import beanKitchenPreview from '@/assets/portfolio/bean-kitchen-preview.png';
@@ -19,8 +35,8 @@ export const portfolios: Portfolio[] = [
     slug: "modern-minimalist-kitchen",
     description:
       "A stunning modern kitchen featuring clean lines, handleless cabinets, and integrated appliances. This project showcases our expertise in creating functional yet beautiful spaces that maximize efficiency without compromising on style.",
-    heroImage: portfolio1,
-    gallery: [favicon, beanKitchenPreview],
+    heroImage: portfolio1_1,
+    gallery: [portfolio1_2, portfolio1_3,portfolio1_4],
     location: "Manhattan, NY",
     style: "Modern",
     completionDate: "March 2024",
@@ -30,13 +46,14 @@ export const portfolios: Portfolio[] = [
     headline: "",
   },
   {
+
     id: "2",
     title: "Classic Traditional Kitchen",
     slug: "classic-traditional-kitchen",
     description:
       "This elegant traditional kitchen combines timeless design with modern conveniences. Rich wood cabinetry, marble countertops, and professional-grade appliances create a warm and inviting space perfect for family gatherings.",
-    heroImage: portfolio2,
-    gallery: [logo, portfolio4],
+    heroImage: portfolio2_1,
+    gallery: [ portfolio2_2],
     location: "Westchester, NY",
     style: "Traditional",
     completionDate: "January 2024",
@@ -51,8 +68,8 @@ export const portfolios: Portfolio[] = [
     slug: "industrial-loft-kitchen",
     description:
       "Bold and contemporary, this industrial-style kitchen features exposed brick, steel accents, and concrete countertops. The open layout and high ceilings create a dramatic space that's both stylish and practical.",
-    heroImage: portfolio3,
-    gallery: [],
+    heroImage: portfolio3_1,
+    gallery: [portfolio3_2 , portfolio3_3],
     location: "Brooklyn, NY",
     style: "Industrial",
     completionDate: "December 2023",
@@ -67,8 +84,8 @@ export const portfolios: Portfolio[] = [
     slug: "industrial-loft-kitchen",
     description:
       "Bold and contemporary, this industrial-style kitchen features exposed brick, steel accents, and concrete countertops. The open layout and high ceilings create a dramatic space that's both stylish and practical.",
-    heroImage: portfolio4,
-    gallery: [],
+    heroImage: portfolio4_1,
+    gallery: [ portfolio4_2],
     location: "Brooklyn, NY",
     style: "Industrial",
     completionDate: "December 2023",
@@ -83,8 +100,8 @@ export const portfolios: Portfolio[] = [
     slug: "industrial-loft-kitchen",
     description:
       "Bold and contemporary, this industrial-style kitchen features exposed brick, steel accents, and concrete countertops. The open layout and high ceilings create a dramatic space that's both stylish and practical.",
-    heroImage: portfolio5,
-    gallery: [],
+    heroImage: portfolio5_1,
+    gallery: [portfolio5_2],
     location: "Brooklyn, NY",
     style: "Industrial",
     completionDate: "December 2023",
@@ -99,7 +116,7 @@ export const portfolios: Portfolio[] = [
     slug: "industrial-loft-kitchen",
     description:
       "Bold and contemporary, this industrial-style kitchen features exposed brick, steel accents, and concrete countertops. The open layout and high ceilings create a dramatic space that's both stylish and practical.",
-    heroImage: portfolio6,
+    heroImage: portfolio6_1,
     gallery: [],
     location: "Brooklyn, NY",
     style: "Industrial",
@@ -115,7 +132,7 @@ export const portfolios: Portfolio[] = [
     slug: "industrial-loft-kitchen",
     description:
       "Bold and contemporary, this industrial-style kitchen features exposed brick, steel accents, and concrete countertops. The open layout and high ceilings create a dramatic space that's both stylish and practical.",
-    heroImage: portfolio7,
+    heroImage: portfolio7_1,
     gallery: [],
     location: "Brooklyn, NY",
     style: "Industrial",
@@ -131,7 +148,39 @@ export const portfolios: Portfolio[] = [
     slug: "industrial-loft-kitchen",
     description:
       "Bold and contemporary, this industrial-style kitchen features exposed brick, steel accents, and concrete countertops. The open layout and high ceilings create a dramatic space that's both stylish and practical.",
-    heroImage: portfolio8,
+    heroImage: portfolio8_1,
+    gallery: [],
+    location: "Brooklyn, NY",
+    style: "Industrial",
+    completionDate: "December 2023",
+    client: "Urban Loft",
+    services: ["Design", "Installation"],
+    featured: false,
+    headline: "",
+  },
+  {
+    id: "9",
+    title: "Industrial Loft Kitchen",
+    slug: "industrial-loft-kitchen",
+    description:
+      "Bold and contemporary, this industrial-style kitchen features exposed brick, steel accents, and concrete countertops. The open layout and high ceilings create a dramatic space that's both stylish and practical.",
+    heroImage: portfolio9_1,
+    gallery: [],
+    location: "Brooklyn, NY",
+    style: "Industrial",
+    completionDate: "December 2023",
+    client: "Urban Loft",
+    services: ["Design", "Installation"],
+    featured: false,
+    headline: "",
+  },
+  {
+    id: "10",
+    title: "Industrial Loft Kitchen",
+    slug: "industrial-loft-kitchen",
+    description:
+      "Bold and contemporary, this industrial-style kitchen features exposed brick, steel accents, and concrete countertops. The open layout and high ceilings create a dramatic space that's both stylish and practical.",
+    heroImage: portfolio10_1,
     gallery: [],
     location: "Brooklyn, NY",
     style: "Industrial",

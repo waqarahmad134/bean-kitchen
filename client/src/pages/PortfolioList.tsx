@@ -26,7 +26,7 @@ export default function PortfolioList() {
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {portfolios?.map((portfolio) => (
-                <Link key={portfolio.id} href={`/portfolio/${portfolio.slug}`}>
+                <Link key={portfolio.id} href={`#`}>
                   <div className="group relative overflow-hidden rounded-md hover-elevate" data-testid={`card-portfolio-${portfolio.id}`}>
                     <img
                       src={portfolio.heroImage}

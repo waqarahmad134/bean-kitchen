@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="bg-foreground text-background" data-testid="footer">
       <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-4 gap-12 mb-12">
+        <div className="grid md:grid-cols-3 gap-12 mb-12">
           <div>
             <h3 className="text-3xl font-heading font-bold mb-4" data-testid="text-footer-logo">
               Bean Kitchen
@@ -30,7 +30,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div>
+          <div className='flex flex-col items-center'>
             <h4 className="text-xl font-heading font-semibold mb-6" data-testid="text-footer-quick-title">
               Quick Links
             </h4>
@@ -42,7 +42,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
+          {/* <div>
             <h4 className="text-xl font-heading font-semibold mb-6" data-testid="text-footer-services-title">
               Our Services
             </h4>
@@ -52,7 +52,7 @@ export default function Footer() {
               <li><a href="#" className="text-background/80 hover:text-primary transition-colors" data-testid="link-design">Design</a></li>
               <li><a href="#" className="text-background/80 hover:text-primary transition-colors" data-testid="link-installation">Installation</a></li>
             </ul>
-          </div>
+          </div> */}
 
           <div>
             <h4 className="text-xl font-heading font-semibold mb-6" data-testid="text-footer-newsletter-title">

@@ -75,6 +75,7 @@ export default function VideoSection() {
         controls
         autoPlay
         className="w-full h-full rounded-md"
+        muted
       >
         Your browser does not support the video tag.
       </video>

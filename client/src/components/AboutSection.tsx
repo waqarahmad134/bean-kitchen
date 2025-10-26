@@ -34,7 +34,7 @@ export default function AboutSection() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mt-16">
+        {/* <div className="grid md:grid-cols-3 gap-8 mt-16">
           <div className="text-center" data-testid="feature-workers">
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
               <Users className="w-8 h-8 text-primary" />
@@ -68,7 +68,7 @@ export default function AboutSection() {
               Integer malesuada sodales nisi, rutrum gravida metus elit dolor.
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

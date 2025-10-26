@@ -7,8 +7,8 @@ export default function StatsCounter() {
 
   useEffect(() => {
     const duration = 2000;
-    const yearsTarget = 25;
-    const customersTarget = 15;
+    const yearsTarget = 7;
+    const customersTarget = 1879;
     const designsTarget = 350;
 
     const animateCount = (setter: (value: number) => void, target: number) => {
@@ -46,7 +46,7 @@ export default function StatsCounter() {
           </div>
           <div data-testid="stat-customers">
             <div className="text-5xl md:text-6xl font-heading font-bold text-primary mb-3" data-testid="text-customers-count">
-              {customersCount}K
+              {customersCount}
             </div>
             <p className="text-lg text-background/80" data-testid="text-customers-label">
               Happy customers
