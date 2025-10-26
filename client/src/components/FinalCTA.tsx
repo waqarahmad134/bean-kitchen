@@ -19,9 +19,6 @@ export default function FinalCTA() {
         <p className="text-2xl md:text-3xl mb-8 text-white/90" data-testid="text-final-cta-subtitle">
           You dream It, we design It.
         </p>
-        <Button size="lg" variant="default" className="text-lg px-8" data-testid="button-schedule">
-          Schedule a chat
-        </Button>
       </div>
     </section>
   );
