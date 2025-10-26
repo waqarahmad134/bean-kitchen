@@ -1,6 +1,6 @@
 import { Users, Leaf, Calculator } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import aboutImage from '@assets/generated_images/Kitchen_design_consultation_scene_f5902b63.png';
+import aboutImage from '@/assets/portfolio/about_us.jpg';
 
 export default function AboutSection() {
   return (
@@ -28,7 +28,7 @@ export default function AboutSection() {
             <img
               src={aboutImage}
               alt="Design consultation"
-              className="rounded-md w-full"
+              className="rounded-md w-full h-[420px]"
               data-testid="img-about"
             />
           </div>
