@@ -18,9 +18,7 @@ export default defineConfig({
     emptyOutDir: true,
   },
   define: {
-    // ✅ Only define global safely
-    global:
-      "typeof globalThis !== 'undefined' ? globalThis : (typeof window !== 'undefined' ? window : {})",
+    global: "globalThis", // <-- key line
   },
   server: {
     fs: {
