@@ -1,8 +1,8 @@
 import React, { useState, useMemo } from "react";
 import { useQuery } from "@tanstack/react-query";
-import Lightbox from "react-image-lightbox";
-import "react-image-lightbox/style.css";
 import type { Portfolio } from "@/types/schema";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 
 export default function HPortfolio() {
   const { data: portfolios, isLoading } = useQuery<Portfolio[]>({
@@ -15,17 +15,12 @@ export default function HPortfolio() {
   // ✅ Combine all images (hero + gallery) from all portfolios into one flat array
   const allImages = useMemo(() => {
     if (!portfolios) return [];
-    return portfolios.flatMap((p) => [
-      p.heroImage,
-      ...(p.gallery || []),
-    ]);
+    return portfolios.flatMap((p) => [p.heroImage, ...(p.gallery || [])]);
   }, [portfolios]);
 
   // ✅ Handle click: find where this portfolio's heroImage starts in the master list
   const openLightbox = (portfolio: Portfolio) => {
-    const clickedIndex = allImages.findIndex(
-      (img) => img === portfolio.heroImage
-    );
+    const clickedIndex = allImages.findIndex((img) => img === portfolio.heroImage);
     setPhotoIndex(clickedIndex >= 0 ? clickedIndex : 0);
     setLightboxOpen(true);
   };
@@ -86,16 +81,26 @@ export default function HPortfolio() {
       {/* ✅ Lightbox for all images */}
       {lightboxOpen && allImages.length > 0 && (
         <Lightbox
-          mainSrc={allImages[photoIndex]}
-          nextSrc={allImages[(photoIndex + 1) % allImages.length]}
-          prevSrc={allImages[(photoIndex + allImages.length - 1) % allImages.length]}
-          onCloseRequest={() => setLightboxOpen(false)}
-          onMovePrevRequest={() =>
-            setPhotoIndex((photoIndex + allImages.length - 1) % allImages.length)
-          }
-          onMoveNextRequest={() =>
-            setPhotoIndex((photoIndex + 1) % allImages.length)
-          }
+          open={lightboxOpen}
+          close={() => setLightboxOpen(false)}
+          index={photoIndex}
+          slides={allImages.map((src) => ({ src }))}
+          on={{
+            view: ({ index }) => setPhotoIndex(index),
+          }}
+          carousel={{
+            finite: false,
+            preload: 2,
+          }}
+          render={{
+            slide: ({ slide }) => (
+              <img
+                src={slide.src}
+                alt=""
+                className="max-h-[80vh] mx-auto rounded-lg object-contain"
+              />
+            ),
+          }}
         />
       )}
     </div>

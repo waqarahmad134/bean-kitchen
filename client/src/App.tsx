@@ -17,7 +17,7 @@ import AboutPage from "@/pages/AboutPage";
 import ContactPage from "@/pages/ContactPage";
 import AdminLogin from "@/pages/admin/Login";
 import AdminDashboard from "@/pages/admin/Dashboard";
-import 'react-image-lightbox/style.css';
+import "yet-another-react-lightbox/styles.css";
 
 function Router() {
   return (

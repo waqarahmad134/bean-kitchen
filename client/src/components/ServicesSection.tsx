@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Wrench, Monitor, Palette } from "lucide-react";
-import Lightbox from "react-image-lightbox";
-import "react-image-lightbox/style.css";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 import { Button } from "@/components/ui/button";
 
 // --- Images ---
@@ -17,12 +17,11 @@ import cabinetImg2 from "@assets/portfolio/custom_cabin_3.jpg";
 import cabinetImg3 from "@assets/portfolio/custom_cabin_4.jpg";
 import cabinetImg4 from "@assets/portfolio/custom_cabin_5.jpg";
 
-import modernkitchen from "@/assets/portfolio/modern_kitchen.jpg"
-import standardkitchen from "@/assets/portfolio/standard_kitchen.jpg"
-import outdoorkitchen from "@/assets/portfolio/outdoor_kitchen.jpg"
+import modernkitchen from "@/assets/portfolio/modern_kitchen.jpg";
+import standardkitchen from "@/assets/portfolio/standard_kitchen.jpg";
+import outdoorkitchen from "@/assets/portfolio/outdoor_kitchen.jpg";
 
 export default function ServicesSection() {
-  // --- Define all services dynamically ---
   const services = [
     {
       title: "Design Blue Prints",
@@ -39,7 +38,7 @@ export default function ServicesSection() {
     {
       title: "Custom Cabinetry",
       icon: <Palette className="w-8 h-8 mb-3 text-primary" />,
-      images: [cabinetImg , cabinetImg1 ,cabinetImg2 , cabinetImg3 ,cabinetImg4],
+      images: [cabinetImg, cabinetImg1, cabinetImg2, cabinetImg3, cabinetImg4],
       cover: cabinetImg,
     },
     {
@@ -62,7 +61,6 @@ export default function ServicesSection() {
     },
   ];
 
-  // --- Shared Lightbox State ---
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
   const [photoIndex, setPhotoIndex] = useState(0);
@@ -84,7 +82,8 @@ export default function ServicesSection() {
             Custom Built Cabinets.
           </h3>
           <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout.
           </p>
         </div>
 
@@ -95,6 +94,7 @@ export default function ServicesSection() {
               key={index}
               className="group relative overflow-hidden rounded-md hover-elevate cursor-pointer"
               onClick={() => {
+                if (service.images.length === 0) return; // Skip empty galleries
                 setCurrentServiceIndex(index);
                 setPhotoIndex(0);
                 setLightboxOpen(true);
@@ -120,29 +120,26 @@ export default function ServicesSection() {
         {/* Lightbox Viewer */}
         {lightboxOpen && currentService && (
           <Lightbox
-            mainSrc={currentService.images[photoIndex]}
-            nextSrc={
-              currentService.images[
-                (photoIndex + 1) % currentService.images.length
-              ]
-            }
-            prevSrc={
-              currentService.images[
-                (photoIndex + currentService.images.length - 1) %
-                  currentService.images.length
-              ]
-            }
-            onCloseRequest={() => setLightboxOpen(false)}
-            onMovePrevRequest={() =>
-              setPhotoIndex(
-                (photoIndex + currentService.images.length - 1) %
-                  currentService.images.length
-              )
-            }
-            onMoveNextRequest={() =>
-              setPhotoIndex((photoIndex + 1) % currentService.images.length)
-            }
-            animationDuration={400}
+            open={lightboxOpen}
+            close={() => setLightboxOpen(false)}
+            index={photoIndex}
+            slides={currentService.images.map((src) => ({ src }))}
+            carousel={{
+              finite: false,
+              preload: 2,
+            }}
+            render={{
+              slide: ({ slide }) => (
+                <img
+                  src={slide.src}
+                  alt=""
+                  className="max-h-[80vh] mx-auto rounded-lg object-contain"
+                />
+              ),
+            }}
+            on={{
+              view: ({ index }) => setPhotoIndex(index),
+            }}
           />
         )}
       </div>
